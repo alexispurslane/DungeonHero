@@ -1,0 +1,61 @@
+{"ts":1373413505788,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1373413752616,"patch":[[{"diffs":[[1,"\nig.module(\n    'game.entities.armor'\n)\n.requires(\n\t'impact.entity'\n)\n.defines(function(){\n\nEntityArmor = ig.Entity.extend({\n\t\n\tsize: {x: 32, y: 32},\n\tdelay: 1,\n\tdelayTimer: null,\n\ttriggerEntity: null,\n\ttype: ig.Entity.TYPE.A, // Player friendly group\n    checkAgainst: ig.Entity.TYPE.A,\n    getSFX: new ig.Sound('media/coin.ogg'),\n\t\n\tinit: function( x, y, settings ) {\n\t\tthis.parent( x, y, settings );\n        this.animSheet = new ig.AnimationSheet('media/equipment-32x32.png', 32, 32)\n        this.addAnim('idle', 1, [104]);\n\t},\n\t\n\tcheck: function (other) {\n        this.follow = true\n\t},\n\tupdate: function(){\n\t\tthis.parent()\n        if (this.follow && ig.game.player) {\n            this.pos.x = ig.game.player.pos.x\n            this.pos.y = ig.game.player.pos.y\n            ig.game.msg = \"Player picked up simple robe.\"\n            ig.game.robe = true;\n            console.log(ig.game.player.robe)\n        }\n\t}\n});\n\n});"]],"start1":0,"start2":0,"length1":0,"length2":922}]],"length":922,"saved":false}
+{"ts":1373413758451,"patch":[[{"diffs":[[0,", [1"],[-1,"0"],[0,"4]);"]],"start1":517,"start2":517,"length1":9,"length2":8}]],"length":921,"saved":false}
+{"ts":1373413759430,"patch":[[{"diffs":[[0,", 1, [14"],[1,"9"],[0,"]);\n\t},\n"]],"start1":514,"start2":514,"length1":16,"length2":17}]],"length":922,"saved":false}
+{"ts":1373413760256,"patch":[[{"diffs":[[0," 1, [149"],[1,"6"],[0,"]);\n\t},\n"]],"start1":515,"start2":515,"length1":16,"length2":17}]],"length":923,"saved":false}
+{"ts":1373413770110,"patch":[[{"diffs":[[0,"dia/"],[-1,"equipment-32x32.png"],[1,"ti"],[0,"', 3"]],"start1":453,"start2":453,"length1":27,"length2":10}]],"length":906,"saved":false}
+{"ts":1373413771118,"patch":[[{"diffs":[[0,"media/ti"],[1,"le"],[0,"', 32, 3"]],"start1":451,"start2":451,"length1":16,"length2":18}]],"length":908,"saved":false}
+{"ts":1373413771736,"patch":[[{"diffs":[[0,"dia/tile"],[1,"set"],[0,"', 32, 3"]],"start1":453,"start2":453,"length1":16,"length2":19}]],"length":911,"saved":false}
+{"ts":1373413773063,"patch":[[{"diffs":[[0,"/tileset"],[1,".p"],[0,"', 32, 3"]],"start1":456,"start2":456,"length1":16,"length2":18}]],"length":913,"saved":false}
+{"ts":1373413774734,"patch":[[{"diffs":[[0,"ileset.p"],[1,"ng"],[0,"', 32, 3"]],"start1":458,"start2":458,"length1":16,"length2":18}]],"length":915,"saved":false}
+{"ts":1373413787434,"patch":[[{"diffs":[[0,"    "],[-1,"this.follow = true"],[0,"\n\t},"]],"start1":557,"start2":557,"length1":26,"length2":8}]],"length":897,"saved":false}
+{"ts":1373413796290,"patch":[[{"diffs":[[0,"        "],[1,"ig.game.player"],[0,"\n\t},\n\tup"]],"start1":553,"start2":553,"length1":16,"length2":30}]],"length":911,"saved":false}
+{"ts":1373413799388,"patch":[[{"diffs":[[0,"e.player"],[1,".defence ="],[0,"\n\t},\n\tup"]],"start1":567,"start2":567,"length1":16,"length2":26}]],"length":921,"saved":false}
+{"ts":1373413800068,"patch":[[{"diffs":[[0,"efence ="],[1," "],[0,"\n\t},\n\tup"]],"start1":577,"start2":577,"length1":16,"length2":17}]],"length":922,"saved":false}
+{"ts":1373413803562,"patch":[[{"diffs":[[0,"defence "],[-1,"= "],[0,"\n\t},\n\tup"]],"start1":576,"start2":576,"length1":18,"length2":16}]],"length":920,"saved":false}
+{"ts":1373413804902,"patch":[[{"diffs":[[0,"defence "],[1,"+="],[0,"\n\t},\n\tup"]],"start1":576,"start2":576,"length1":16,"length2":18}]],"length":922,"saved":false}
+{"ts":1373413805643,"patch":[[{"diffs":[[0,"fence +="],[1," "],[0,"\n\t},\n\tup"]],"start1":578,"start2":578,"length1":16,"length2":17}]],"length":923,"saved":false}
+{"ts":1373413806357,"patch":[[{"diffs":[[0,"ence += "],[1,"2"],[0,"\n\t},\n\tup"]],"start1":579,"start2":579,"length1":16,"length2":17}]],"length":924,"saved":false}
+{"ts":1373413816274,"patch":[[{"diffs":[[0,"(){\n"],[-1,"\t\tthis.parent()\n        if (this.follow && ig.game.player) {\n            this.pos.x = ig.game.player.pos.x\n            this.pos.y = ig.game.player.pos.y\n            ig.game.msg = \"Player picked up simple robe.\"\n            ig.game.robe = true;\n            console.log(ig.game.player.robe)\n        }"],[0,"\n\t}\n"]],"start1":610,"start2":610,"length1":306,"length2":8}]],"length":626,"saved":false}
+{"ts":1373413817554,"patch":[[{"diffs":[[0,"tion(){\n"],[-1,"\n"],[0,"\t}\n});\n\n"]],"start1":606,"start2":606,"length1":17,"length2":16}]],"length":625,"saved":false}
+{"ts":1373413822398,"patch":[[{"diffs":[[0,"\t},\n"],[-1,"\tupdate: function(){\n\t}\n"],[0,"});\n"]],"start1":589,"start2":589,"length1":32,"length2":8}]],"length":601,"saved":false}
+{"ts":1373413825742,"patch":[[{"diffs":[[0,"ce += 2\n"],[1,"        thi\n"],[0,"\t},\n});\n"]],"start1":581,"start2":581,"length1":16,"length2":28}]],"length":613,"saved":false}
+{"ts":1373413828242,"patch":[[{"diffs":[[0,"     thi"],[1,"s.kill()"],[0,"\n\t},\n});"]],"start1":592,"start2":592,"length1":16,"length2":24}]],"length":621,"saved":false}
+{"ts":1373413932685,"patch":[[{"diffs":[[0,"ce += 2\n"],[1,"        \n"],[0,"        "]],"start1":581,"start2":581,"length1":16,"length2":25}]],"length":630,"saved":false}
+{"ts":1373413934499,"patch":[[{"diffs":[[0,"        "],[1,"var "],[0,"\n       "]],"start1":589,"start2":589,"length1":16,"length2":20}]],"length":634,"saved":false}
+{"ts":1373413938039,"patch":[[{"diffs":[[0,"    var "],[1,"ge"],[0,"\n       "]],"start1":593,"start2":593,"length1":16,"length2":18}]],"length":636,"saved":false}
+{"ts":1373413939365,"patch":[[{"diffs":[[0,"  var ge"],[1,"t = "],[0,"\n       "]],"start1":595,"start2":595,"length1":16,"length2":20}]],"length":640,"saved":false}
+{"ts":1373413945801,"patch":[[{"diffs":[[0,"r get = "],[1,"new ig.Sou"],[0,"\n       "]],"start1":599,"start2":599,"length1":16,"length2":26}]],"length":650,"saved":false}
+{"ts":1373413947701,"patch":[[{"diffs":[[0,"w ig.Sou"],[1,"nd('')"],[0,"\n       "]],"start1":609,"start2":609,"length1":16,"length2":22}]],"length":656,"saved":false}
+{"ts":1373413948451,"patch":[[{"diffs":[[0,".Sound('"],[1,"m"],[0,"')\n     "]],"start1":613,"start2":613,"length1":16,"length2":17}]],"length":657,"saved":false}
+{"ts":1373413950100,"patch":[[{"diffs":[[0,"Sound('m"],[1,"edia/"],[0,"')\n     "]],"start1":614,"start2":614,"length1":16,"length2":21}]],"length":662,"saved":false}
+{"ts":1373413950871,"patch":[[{"diffs":[[0,"('media/"],[1,"coi"],[0,"')\n     "]],"start1":619,"start2":619,"length1":16,"length2":19}]],"length":665,"saved":false}
+{"ts":1373413952264,"patch":[[{"diffs":[[0,"edia/coi"],[1,"n.o"],[0,"')\n     "]],"start1":622,"start2":622,"length1":16,"length2":19}]],"length":668,"saved":false}
+{"ts":1373413953841,"patch":[[{"diffs":[[0,"a/coin.o"],[1,"gg"],[0,"')\n     "]],"start1":625,"start2":625,"length1":16,"length2":18}]],"length":670,"saved":false}
+{"ts":1373413955324,"patch":[[{"diffs":[[0,"n.ogg')\n"],[1,"        g\n"],[0,"        "]],"start1":630,"start2":630,"length1":16,"length2":26}]],"length":680,"saved":false}
+{"ts":1373413957257,"patch":[[{"diffs":[[0,"       g"],[1,"e"],[0,"\n       "]],"start1":639,"start2":639,"length1":16,"length2":17}]],"length":681,"saved":false}
+{"ts":1373413957991,"patch":[[{"diffs":[[0,"      ge"],[1,"t"],[0,"\n       "]],"start1":640,"start2":640,"length1":16,"length2":17}]],"length":682,"saved":false}
+{"ts":1373413960269,"patch":[[{"diffs":[[0,"     get"],[1,".play()"],[0,"\n       "]],"start1":641,"start2":641,"length1":16,"length2":23}]],"length":689,"saved":false}
+{"ts":1373413967735,"patch":[[{"diffs":[[0,"     get"],[1,"SX"],[0,".play()\n"]],"start1":641,"start2":641,"length1":16,"length2":18}]],"length":691,"saved":false}
+{"ts":1373413970174,"patch":[[{"diffs":[[0,"    getS"],[-1,"X"],[0,".play()\n"]],"start1":642,"start2":642,"length1":17,"length2":16}]],"length":690,"saved":false}
+{"ts":1373413971648,"patch":[[{"diffs":[[0,"    getS"],[1,"FX"],[0,".play()\n"]],"start1":642,"start2":642,"length1":16,"length2":18}]],"length":692,"saved":false}
+{"ts":1373413973786,"patch":[[{"diffs":[[0,"g')\n        "],[1,"this."],[0,"getSFX.play("]],"start1":634,"start2":634,"length1":24,"length2":29}]],"length":697,"saved":false}
+{"ts":1373413975561,"patch":[[{"diffs":[[0,"= 2\n"],[-1,"        var get = new ig.Sound('media/coin.ogg')\n"],[0,"    "]],"start1":585,"start2":585,"length1":57,"length2":8}]],"length":648,"saved":false}
+{"ts":1373414186387,"patch":[[{"diffs":[[0,"dia/"],[-1,"tileset"],[0,".png"]],"start1":453,"start2":453,"length1":15,"length2":8}]],"length":641,"saved":false}
+{"ts":1373414189577,"patch":[[{"diffs":[[0,"('media/"],[1,"aromors"],[0,".png', 3"]],"start1":449,"start2":449,"length1":16,"length2":23}]],"length":648,"saved":false}
+{"ts":1373414192149,"patch":[[{"diffs":[[0,"1, ["],[-1,"1496"],[0,"]);\n"]],"start1":508,"start2":508,"length1":12,"length2":8}]],"length":644,"saved":false}
+{"ts":1373414221139,"patch":[[{"diffs":[[0,"e', 1, ["],[1,"0"],[0,"]);\n\t},\n"]],"start1":504,"start2":504,"length1":16,"length2":17}]],"length":645,"saved":false}
+{"ts":1373414325310,"patch":[[{"diffs":[[0,"1, ["],[-1,"0"],[1,"1"],[0,"]);\n"]],"start1":508,"start2":508,"length1":9,"length2":9}]],"length":645,"saved":false}
+{"ts":1373414353926,"patch":[[{"diffs":[[0,"e', 1, ["],[-1,"1"],[1,"0"],[0,"]);\n\t},\n"]],"start1":504,"start2":504,"length1":17,"length2":17}]],"length":645,"saved":false}
+{"ts":1373414361246,"patch":[[{"diffs":[[0,"media/ar"],[-1,"o"],[0,"mors.png"]],"start1":451,"start2":451,"length1":17,"length2":16}]],"length":644,"saved":false}
+{"ts":1373415310393,"patch":[[{"diffs":[[0,"dia/"],[-1,"armors"],[1,"tile"],[0,".png"]],"start1":453,"start2":453,"length1":14,"length2":12}]],"length":642,"saved":false}
+{"ts":1373415312076,"patch":[[{"diffs":[[0,"dia/tile"],[1,"set"],[0,".png', 3"]],"start1":453,"start2":453,"length1":16,"length2":19}]],"length":645,"saved":false}
+{"ts":1373415382525,"patch":[[{"diffs":[[0,"1, ["],[-1,"0"],[0,"]);\n"]],"start1":508,"start2":508,"length1":9,"length2":8}]],"length":644,"saved":false}
+{"ts":1373415383875,"patch":[[{"diffs":[[0,"e', 1, ["],[1,"5"],[0,"]);\n\t},\n"]],"start1":504,"start2":504,"length1":16,"length2":17}]],"length":645,"saved":false}
+{"ts":1373415385129,"patch":[[{"diffs":[[0,"', 1, [5"],[1,"0"],[0,"]);\n\t},\n"]],"start1":505,"start2":505,"length1":16,"length2":17}]],"length":646,"saved":false}
+{"ts":1373415519435,"patch":[[{"diffs":[[0,"1, ["],[-1,"50"],[0,"]);\n"]],"start1":508,"start2":508,"length1":10,"length2":8}]],"length":644,"saved":false}
+{"ts":1373415521240,"patch":[[{"diffs":[[0,"e', 1, ["],[1,"1"],[0,"]);\n\t},\n"]],"start1":504,"start2":504,"length1":16,"length2":17}]],"length":645,"saved":false}
+{"ts":1373415543555,"patch":[[{"diffs":[[0,"/tileset"],[1,"d"],[0,".png', 3"]],"start1":456,"start2":456,"length1":16,"length2":17}]],"length":646,"saved":false}
+{"ts":1373415546355,"patch":[[{"diffs":[[0,"e', 1, ["],[-1,"1"],[1,"50"],[0,"]);\n\t},\n"]],"start1":505,"start2":505,"length1":17,"length2":18}]],"length":647,"saved":false}
+{"ts":1373415596053,"patch":[[{"diffs":[[0,"1, ["],[-1,"50"],[0,"]);\n"]],"start1":509,"start2":509,"length1":10,"length2":8}]],"length":645,"saved":false}
+{"ts":1373415597800,"patch":[[{"diffs":[[0,"e', 1, ["],[1,"69"],[0,"]);\n\t},\n"]],"start1":505,"start2":505,"length1":16,"length2":18}]],"length":647,"saved":false}
