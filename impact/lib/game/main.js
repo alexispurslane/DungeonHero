@@ -11,11 +11,12 @@ ig.module(
     'plugins.screen-fader',
     'game.levels.level2',
     'game.levels.level3',
-    'game.levels.level4'
+    'game.levels.level4',
+    'game.levels.level5'
 )
 .defines(function() {
 
-    FoggyGame = ig.Game.extend({
+    MainGame = ig.Game.extend({
         // The height and width <in tiles> of the area to be covered by fog
         // You must also provide the tile size in pixels
         mapWidth: 50,
@@ -24,8 +25,6 @@ ig.module(
         lightManager: '',
         font: new ig.Font('media/04b03.font.png'),
         init: function() {
-            ig.music.volume = 0.5;
-            ig.music.play()
             ig.input.bind(ig.KEY.UP_ARROW, 'up')
             ig.input.bind(ig.KEY.DOWN_ARROW, 'down')
             ig.input.bind(ig.KEY.LEFT_ARROW, 'left')
@@ -140,14 +139,22 @@ ig.module(
                 };
             };
             if (ig.input.state('quaff')) {
-                ig.game.player.health = ig.game.player.health != 100? 100:ig.game.player.health
-                for (var i=0; i < ig.game.player.inventory.length;i++) {
-                    if (ig.game.player.inventory[i] == "Health Potion") {
-                        ig.game.player.inventory[i] = null
-                        break;
+                Array.prototype.removeByValue = function(val) {
+                    for (var i = 0; i < this.length; i++) {
+                        var c = this[i];
+                        if (c == val || (val.equals && val.equals(c))) {
+                            this.splice(i, 1);
+                            break;
+                        }
                     }
+                };
+                var result = ig.game.player.inventory.removeByValue( "Health Potion" );
+                if (result != undefined && result == true) {
+                    ig.game.player.health = ig.game.player.health != 100? 100:ig.game.player.health
+                    this.font.draw("You quaffed a potion.", ig.system.width / 2, 224, ig.Font.ALIGN.CENTER)
+                } else {
+                    this.font.draw("You have no potions to quaff.", ig.system.width / 2, 224, ig.Font.ALIGN.CENTER)
                 }
-                this.font.draw("You quaffed a potion.", ig.system.width / 2, 224, ig.Font.ALIGN.CENTER)
             }
             if (this.paused) return;
             this.parent()
@@ -181,7 +188,7 @@ ig.module(
         },
         update: function () {
             if (ig.input.state('esc')) {
-                ig.system.setGame(FoggyGame)
+                ig.system.setGame(MainGame)
             }
             this.parent()
         }
@@ -190,5 +197,5 @@ if( ig.ua.mobile ) {
     ig.Sound.enabled = false;
 }
 
-    ig.main('#canvas', FoggyGame, 60, 320, 240, 2);
+    ig.main('#canvas', MainGame, 60, 320, 240, 2);
 });
